@@ -1,0 +1,65 @@
+% Project:  TeX Arno's Formal letter Template
+% Author:   Arno Veletanlic (From Sid Lacy's theme, with thanks)
+
+% EDIT info.tex, body.tex
+
+\documentclass[16pt]{letter}
+\usepackage{fontawesome5}
+\usepackage{eso-pic}
+\usepackage[OT1]{fontenc}
+\usepackage[french]{babel}
+\usepackage[empty]{fullpage}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{marvosym}
+\usepackage{wrapfig}
+
+\addtolength{\topmargin}{-0.5in}
+\definecolor{pp}{RGB}{155, 80, 212}
+\definecolor{pkl}{RGB}{228, 71, 252}
+\definecolor{lpkl}{RGB}{247, 196, 255}
+\input{info}
+
+\begin{document}
+
+% Shaded header banner
+\AddToShipoutPictureBG*{%
+\includegraphics[trim={0 {-1.15\paperwidth} 0 0},clip]{PurpleWave.png}
+}
+
+% Header
+\begin{center}
+\large
+\textcolor{lpkl}{
+\href{http://veletanlic.org}{\texttt{www}\enspace Website}\hfill
+\href{mailto:\myemail}{\faEnvelope\enspace \myemail}\hfill
+\href{tel:\myphone}{\faPhone\enspace \myphone}\hfill
+\faMapMarker\enspace \href{https://goo.gl/maps/TG1BjiwrtCYisynV9}{\mylocation}
+}
+\end{center}
+\vspace{2cm}
+
+% Opening block
+\textcolor{pp}{\Large Le \today}\\
+\\\\
+\textcolor{pp}{\large\greeting\ \recipient,}\\
+
+% Body
+\vspace{-0.1in}\setlength\parindent{24pt}
+\noindent\input{body}\\\\\\
+
+% Closer
+\begin{wrapfigure}[0.1\paperheight]{l}[]{0.5\paperwidth}
+    \vspace{-3cm}\includegraphics[width=0.3\paperwidth]{Signature-purple-thin.png}
+\end{wrapfigure}
+\begin{flushright}
+\textcolor{pp}{\large\closer,}
+\end{flushright}
+\begin{flushright}
+\textcolor{pp}{\large\myname}
+\end{flushright}
+\begin{flushright}
+\textcolor{pp}{\mytitle}
+\end{flushright}
+\end{document}
